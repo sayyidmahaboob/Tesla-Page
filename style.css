@@ -1,0 +1,159 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  color: #171a20;
+  font-family: "Poppins", sans-serif;
+  box-sizing: border-box;
+}
+
+/* styling header */
+
+.desktop {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .desktop {
+    display: initial;
+  }
+}
+
+header nav.right {
+  text-align: right;
+}
+
+header {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  padding: 5px 20px;
+  position: fixed;
+  top: 0;
+  z-index: 2;
+  width: 100%;
+}
+
+a.logo {
+  height: 12px !important;
+  width: 100px !important;
+}
+
+a header {
+  color: inherit;
+}
+
+header nav.center {
+  text-align: center;
+}
+
+header nav a {
+  text-decoration: none;
+  padding: 5px 10px;
+}
+
+/* styling sections */
+
+section {
+  height: 100vh;
+  background-size: cover;
+  background-position: center center;
+}
+
+section .content {
+  width: 100%;
+  height: 100vh;
+  padding-top: 15vh;
+  padding-bottom: 15vh;
+  text-align: center;
+  display: grid !important;
+  grid-template-rows: auto 1fr 1fr !important;
+}
+
+section h1 {
+  font-size: 3rem;
+}
+
+section a {
+  color: inherit;
+}
+
+section .button a {
+  display: block;
+  background: rgb(238, 237, 237);
+  color: inherit;
+  padding: 12px 50px;
+  text-decoration: none;
+  border-radius: 5px;
+  text-transform: uppercase;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+section .button a:first-child {
+  background-color: rgb(15, 15, 15);
+  color: aliceblue;
+}
+
+section .button {
+  display: grid;
+  row-gap: 20px;
+  height: 45px !important;
+  margin: 0 40px;
+}
+
+@media (min-width: 768px) {
+  section .button {
+    max-width: 640px;
+    margin: 0 auto;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 20px;
+  }
+}
+
+aside {
+  position: fixed;
+  width: 320px;
+  right: -320px;
+  background-color: 0;
+  padding: 30px;
+  z-index: 4;
+  background: rgb(255, 255, 255);
+  height: 100vh;
+  font-weight: 500;
+  transition: right 0.5s ease-in;
+}
+
+aside a {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+  padding: 5px 0;
+  margin: 5px;
+}
+
+aside button.close {
+  font-size: 24px;
+  background-color: transparent;
+  position: absolute;
+  padding: 10px;
+  right: 10px;
+  border: none;
+  cursor: pointer;
+}
+
+.backdrop {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(5px);
+}
+
+.backdrop.active {
+  display: block;
+}
+
+aside.active {
+  right: 0;
+}
